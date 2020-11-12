@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# sqlite_app.py
+"""Set up SQLite database connection, create tables, load data into tables, update, delete and query data.
+"""
 
 __version_info__ = ('0', '1', '1')
 __version__ = '.'.join(__version_info__)
@@ -8,6 +9,8 @@ __version__ = '.'.join(__version_info__)
 from pprint import pprint as pp
 import sqlite3
 from sqlite3 import Error
+
+# TODO: split script into 2, to have command-query separation
 
 
 def create_connection(path):
