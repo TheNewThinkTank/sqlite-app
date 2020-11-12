@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # sqlite_app.py
-__version__ = '0.1.0'
+
+__version_info__ = ('0', '1', '1')
+__version__ = '.'.join(__version_info__)
+# __version__ = '0.1.0'
 
 from pprint import pprint as pp
 import sqlite3
