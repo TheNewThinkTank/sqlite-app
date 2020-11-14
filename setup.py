@@ -3,7 +3,7 @@ import os, sys, re
 # get version info from module without importing it
 version_re = re.compile("""__version__[\s]*['|"](.*)['|"]""")
 
-with open('sqlite_app.py') as f:
+with open('_version.py') as f:
     content = f.read()
     match = version_re.search(content)
     version = match.group(1)
