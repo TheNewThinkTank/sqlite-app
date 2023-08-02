@@ -1,13 +1,13 @@
-import os, sys, re
+import os
+import re
 
 # get version info from module without importing it
-version_re = re.compile("""__version__[\s]*['|"](.*)['|"]""")
+version_re = re.compile(r"__version__[\s]*['|\"](.*)['|\"]")
 
-with open('_version.py') as f:
+with open('_version.py', 'r') as f:
     content = f.read()
     match = version_re.search(content)
     version = match.group(1)
-
 
 readme = os.path.join(os.path.dirname(__file__), 'README.md')
 long_description = open(readme).read()
@@ -19,8 +19,8 @@ SETUP_ARGS = dict(
     description=('Create tables and modify records'),
     long_description=long_description,
     url='https://github.com/TheNewThinkTank/sqlite-app',
-    author='Gustav C. Rasmussen'
-    author_email='<EMAIL>'
+    author='Gustav C. Rasmussen',
+    author_email='<EMAIL>',
     license='MIT',
     include_package_data=True,
     classifiers=[

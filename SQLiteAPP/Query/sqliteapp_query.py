@@ -3,15 +3,23 @@ Query SQLite database
 """
 
 from pprint import pprint as pp
-import sqlite3
 from sqlite3 import Error
 
-from ../Command/sqliteapp_command import create_connection
-from SQL_statements/select import select_data
+from Command.sqliteapp_command import create_connection
+from SQL_statements.select import select_data
 
 
 def execute_read_query(connection, query):
-    """."""
+    """_summary_
+
+    :param connection: _description_
+    :type connection: _type_
+    :param query: _description_
+    :type query: _type_
+    :return: _description_
+    :rtype: _type_
+    """
+
     cursor = connection.cursor()
     result = None
     try:
@@ -23,7 +31,12 @@ def execute_read_query(connection, query):
 
 
 def select_records(connection):
-    """Various select statements."""
+    """Various select statements.
+
+    :param connection: _description_
+    :type connection: _type_
+    """
+
     users = execute_read_query(connection, select_data["select_users"])
     pp(users)
     posts = execute_read_query(connection, select_data["select_posts"])
@@ -55,6 +68,7 @@ def select_records(connection):
 
 def main():
     """Driver function."""
+
     connection = create_connection(r"Desktop\Python\sm_app.sqlite")
 
     post_description = execute_read_query(
