@@ -105,10 +105,10 @@ def main():
                          update or delete records (c/i/s/u/d)?"""
                       ).replace("\n", "")
 
-    db_actions = {"c": "create_table(connection)",
-                  "i": "insert_records(connection)",
-                  "u": "update_records(connection)",
-                  "d": "delete_records(connection)"
+    db_actions = {"c": f"create_table({connection})",
+                  "i": f"insert_records({connection})",
+                  "u": f"update_records({connection})",
+                  "d": f"delete_records({connection})"
     }
 
     exec(db_actions.get(db_choice))
